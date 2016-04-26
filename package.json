@@ -1,22 +1,29 @@
 {
-  "name": "nodebb-plugin-lightbox",
-  "version": "0.0.1",
-  "description": "This plugin opens pictures in a lightbox windows",
-  "main": "library.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rbbau/nodebb-plugin-lightbox"
-  },
-  "keywords": [
-    "nodebb",
-    "plugin",
-    "lightbox"
-  ],
-  "author": {
-    "name": "Rubén Ballester",
-    "email": "irbbau@gmail.com"
-  },
-  "bugs": {
-    "url": "https://github.com/rbbau/nodebb-plugin-lightbox/issues"
-  }
+    "name": "nodebb-plugin-lightbox",
+    "version": "0.0.2",
+    "description": "This plugin opens pictures in a lightbox windows",
+    "main": "library.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rockq-org/nodebb-plugin-lightbox"
+    },
+    "keywords": [
+        "nodebb",
+        "plugin",
+        "lightbox"
+    ],
+    "author": {
+        "name": "Rubén Ballester",
+        "email": "irbbau@gmail.com"
+    },
+    "contributors": [{
+        "name": "Hai Liang Wang",
+        "email": "hailiang.hl.wang@gmail.com"
+    }],
+    "bugs": {
+        "url": "https://github.com/rockq-org/nodebb-plugin-lightbox/issues"
+    },
+    "nbbpm": {
+        "compatibility": "^0.7.0 || ^0.8.0 || ^0.9.0 || ^1.0.0"
+    }
 }

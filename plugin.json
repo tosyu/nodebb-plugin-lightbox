@@ -4,18 +4,17 @@
 	"description": "This plugin opens pictures in a lightbox windows ",
 	"url": "https://github.com/rbbau/nodebb-plugin-lightbox",
 	"library": "./library.js",
-
 	"hooks": [
 		{ "hook": "filter:parse.post", "method": "lightboxPrettify", "callbacked": true, "priority": 6 },
 		{ "hook": "filter:parse.signature", "method": "parseSignature","priority": 6}
 	],
 	"scripts": [
-		"resources/js/lightbox.min.js"
+		"public/js/lightbox.min.js"
 	],
 	"css": [
-		"resources/lightbox.css"
+		"public/lightbox.css"
 	],
 	"staticDirs": {
-		"static": "./resources"
+		"public": "./public"
 	}
 }
