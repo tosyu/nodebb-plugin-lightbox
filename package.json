@@ -1,6 +1,6 @@
 {
     "name": "nodebb-plugin-lightbox",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "This plugin opens pictures in a lightbox windows",
     "main": "library.js",
     "repository": {

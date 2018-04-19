@@ -48,10 +48,26 @@
     // that contain 'lightbox'. When these are clicked, start lightbox.
     Lightbox.prototype.enable = function() {
       var self = this;
-      $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
-        self.start($(event.currentTarget));
-        return false;
-      });
+      var validSelectors = 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]';
+
+        document.addEventListener('click', function (e) {
+            var $el = $(e.target);
+            // check if click was on image link
+            if ($el.is(validSelectors) === false) {
+                // maybe was in img in link so traverse parents
+                $el = $el.parent(validSelectors);
+            }
+
+            if ($el.length) { // at least one element found
+                // block
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                self.start($el); //pass it like before
+                return false;
+            }
+            return true;
+        });
     };
 
     // Build html for the lightbox and the overlay.
