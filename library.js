@@ -10,7 +10,7 @@ var lightbox = {},
     if (relativeUrlChars.indexOf(p1FirstChar) > -1 && suffixRegex.test(p1)) {
       p1Orig = p1.replace(suffixRegex, '$1');
     }
-    return '<a class="lightboxlink" href="' + p1Orig + '" data-lightbox="' + p2 + '"><img class="lightboximage" src="' + p1 + '" alt="' + p2 + '"></a>';
+    return '<a class="lightboxlink" href="' + p1Orig + '" data-lightbox="' + p2 + '" data-ajaxify="false"><img class="lightboximage" src="' + p1 + '" alt="' + p2 + '"></a>';
   }
 
   lightbox.lightboxPrettify = function (postContent, callback) {
