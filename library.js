@@ -1,7 +1,8 @@
 "use strict";
 
 var lightbox = {},
-    suffixRegex = /-resized(\.[\w]+)?$/,
+    suffixRegex = /-resized(\.[\w]+)?/ig,
+    findImagesRegex = /<img src="([^"]+)" alt="([^"]+)"([^>])+\/>/ig,
     relativeUrlChars = ['.', '/'];
 
   function makeLightbox(str, p1, p2) {
@@ -14,11 +15,12 @@ var lightbox = {},
   }
 
   lightbox.lightboxPrettify = function (postContent, callback) {
-    postContent.postData.content = postContent.postData.content.replace( /\<img src\=\"?(.*)\" alt\=\"?(.*)\" (.*)\/\>/g , makeLightbox);
+      console.log(postContent.postData.content);
+    postContent.postData.content = postContent.postData.content.replace(findImagesRegex, makeLightbox);
     callback(null, postContent);
   };
   lightbox.parseSignature = function (postContent, callback) {
-    postContent.userData.signature = postContent.userData.signature.replace(  /\<img src\=\"?(.*)\" alt\=\"?(.*)\" (.*)\/\>/g , makeLightbox);
+    postContent.userData.signature = postContent.userData.signature.replace(findImagesRegex, makeLightbox);
     callback(null, postContent);
   };
 module.exports = lightbox;
