@@ -58,7 +58,7 @@
                 $el = $el.parent(validSelectors);
             }
 
-            if ($el.length) { // at least one element found
+            if ($el.length && e.button === 0 && !e.ctrlKey && !e.shiftKey) { // at least one element found
                 // block
                 e.preventDefault();
                 e.stopPropagation();
